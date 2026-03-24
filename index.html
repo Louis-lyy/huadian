@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
@@ -20,334 +20,72 @@
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
-      background:
-        radial-gradient(circle at 0% 0%, #e4f5ea 0, transparent 35%),
-        radial-gradient(circle at 100% 20%, #dff7ff 0, transparent 30%),
-        var(--bg);
+      background: radial-gradient(circle at 0% 0%, #e4f5ea 0, transparent 35%), radial-gradient(circle at 100% 20%, #dff7ff 0, transparent 30%), var(--bg);
       color: var(--text);
     }
-    .wrap {
-      width: min(960px, 92vw);
-      margin: 26px auto 54px;
-    }
-    .card {
-      background: var(--card);
-      border-radius: 20px;
-      padding: 20px;
-      box-shadow: 0 12px 30px rgba(74, 124, 95, 0.1);
-      margin-bottom: 16px;
-      border: 1px solid rgba(86, 166, 123, 0.14);
-    }
-    .title {
-      font-size: 30px;
-      font-weight: 800;
-      margin: 0;
-      letter-spacing: 1px;
-    }
+    .wrap { width: min(960px, 92vw); margin: 26px auto 54px; }
+    .card { background: var(--card); border-radius: 20px; padding: 20px; box-shadow: 0 12px 30px rgba(74,124,95,.1); margin-bottom: 16px; border: 1px solid rgba(86,166,123,.14); }
+    .title { font-size: 30px; font-weight: 800; margin: 0; letter-spacing: 1px; }
     .muted { color: var(--muted); line-height: 1.7; }
-    .hero {
-      height: 260px;
-      border-radius: 16px;
-      background: url("./images/banner.png") center center / cover no-repeat;
-      color: #fff;
-      display: flex;
-      align-items: end;
-      padding: 20px;
-      margin-top: 14px;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 100%);
-      border-radius: 16px;
-    }
-    .hero::after {
-      display: none;
-    }
-    .row {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 12px;
-    }
-    .btn {
-      border: 0;
-      border-radius: 999px;
-      padding: 10px 16px;
-      cursor: pointer;
-      background: linear-gradient(135deg, var(--brand), #7ec99f);
-      color: #fff;
-      font-weight: 600;
-      box-shadow: 0 8px 18px rgba(86, 166, 123, 0.3);
-    }
-    .btn.secondary {
-      background: var(--soft);
-      color: var(--brand-deep);
-      border: 1px solid #cbe5d7;
-      box-shadow: none;
-    }
-    .btn.buy {
-      width: 100%;
-      padding: 14px 16px;
-      font-size: 18px;
-    }
-    .btn:hover {
-      transform: translateY(-1px);
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-    }
-    .ph {
-      height: 170px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, #d9f0e1, #eefaf3);
-      border: 1px dashed #b8dac5;
-    }
-    .item {
-      border-top: 1px solid var(--line);
-      padding-top: 12px;
-      margin-top: 12px;
-    }
-    .nameprice {
-      display: flex;
-      justify-content: space-between;
-      font-weight: 700;
-    }
-    .review {
-      border-top: 1px solid var(--line);
-      padding-top: 12px;
-      margin-top: 12px;
-    }
+    .hero { height: 260px; border-radius: 16px; background: url('./images/banner.png') center center / cover no-repeat; color: #fff; display: flex; align-items: end; padding: 20px; margin-top: 14px; position: relative; overflow: hidden; }
+    .hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,.15) 0%, rgba(0,0,0,.55) 100%); border-radius: 16px; }
+    .row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
+    .btn { border: 0; border-radius: 999px; padding: 10px 16px; cursor: pointer; background: linear-gradient(135deg, var(--brand), #7ec99f); color: #fff; font-weight: 600; box-shadow: 0 8px 18px rgba(86,166,123,.3); }
+    .btn.secondary { background: var(--soft); color: var(--brand-deep); border: 1px solid #cbe5d7; box-shadow: none; }
+    .btn.buy { width: 100%; padding: 14px 16px; font-size: 18px; }
+    .btn:hover { transform: translateY(-1px); }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .item { border-top: 1px solid var(--line); padding-top: 12px; margin-top: 12px; }
+    .nameprice { display: flex; justify-content: space-between; font-weight: 700; }
+    .review { border-top: 1px solid var(--line); padding-top: 12px; margin-top: 12px; }
     .stars { color: #ffb84d; letter-spacing: 2px; }
     h2 { color: #334940; }
-    .product {
-      display: grid;
-      grid-template-columns: 1.15fr 1fr;
-      gap: 14px;
-    }
-    .main-photo {
-      width: 100%;
-      aspect-ratio: 1/1;
-      object-fit: cover;
-      border-radius: 14px;
-      border: 1px solid #e7efe9;
-      background: #f6f6f6;
-    }
-    .thumbs {
-      margin-top: 10px;
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 8px;
-    }
-    .thumb {
-      width: 100%;
-      aspect-ratio: 1/1;
-      object-fit: cover;
-      border-radius: 10px;
-      border: 2px solid transparent;
-      cursor: pointer;
-      opacity: .9;
-    }
-    .thumb.active {
-      border-color: var(--brand);
-      opacity: 1;
-    }
-    .product-title {
-      margin: 0;
-      font-size: 24px;
-      color: #2b3d35;
-    }
-    .price {
-      margin: 8px 0;
-      font-size: 30px;
-      font-weight: 800;
-      color: #e3766d;
-    }
-    .badge {
-      display: inline-block;
-      padding: 5px 10px;
-      border-radius: 999px;
-      background: #fff1f0;
-      color: #c35f56;
-      font-size: 13px;
-      border: 1px solid #ffd8d4;
-    }
-    .panel-title {
-      margin: 0 0 8px;
-      font-size: 18px;
-      color: #31453b;
-    }
-    .stepper {
-      display: inline-flex;
-      border: 1px solid #d8e8de;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-    .stepper button {
-      width: 40px;
-      height: 38px;
-      border: 0;
-      background: #f2faf5;
-      color: #385a4a;
-      cursor: pointer;
-      font-size: 20px;
-      line-height: 1;
-    }
-    .stepper span {
-      width: 46px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: #fff;
-      font-weight: 700;
-    }
-    .slot-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 8px;
-    }
-    .slot {
-      border: 1px solid #d8e8de;
-      background: #fff;
-      border-radius: 10px;
-      padding: 10px 8px;
-      cursor: pointer;
-      text-align: center;
-      color: #3a4c43;
-      font-size: 14px;
-    }
-    .slot small {
-      display: block;
-      color: #8b9f94;
-      margin-top: 3px;
-    }
-    .slot.active {
-      border-color: var(--brand);
-      background: #eff9f3;
-      color: var(--brand-deep);
-      font-weight: 700;
-    }
-    .time-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .pill {
-      border: 1px solid #d7e9de;
-      border-radius: 999px;
-      padding: 8px 12px;
-      background: #fff;
-      cursor: pointer;
-      font-size: 14px;
-      color: #3f5348;
-    }
-    .pill.active {
-      background: #ecf8f1;
-      border-color: #a9d6bc;
-      color: #2f6e4f;
-      font-weight: 700;
-    }
-    .pill.disabled {
-      background: #f2f3f5;
-      border-color: #e2e5e9;
-      color: #9aa3ad;
-      cursor: not-allowed;
-    }
-    .price-tip {
-      margin-top: 6px;
-      color: #c35f56;
-      font-size: 14px;
-      font-weight: 600;
-    }
-    .order-summary {
-      margin-top: 12px;
-      border-radius: 12px;
-      background: #f7fcf9;
-      border: 1px dashed #c9e2d4;
-      padding: 12px;
-      color: #41564b;
-      font-size: 14px;
-      line-height: 1.8;
-    }
-    .order-summary b { color: #2a3f35; }
-    .checkout-head {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 10px;
-    }
-    .checkout-title {
-      margin: 0;
-      font-size: 24px;
-      font-weight: 700;
-      color: #2a3f35;
-    }
-    .checkout-block {
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 12px;
-      margin-bottom: 10px;
-      background: #fff;
-    }
-    .checkout-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      margin-top: 6px;
-      color: #374a40;
-    }
-    .checkout-label {
-      color: #5c6e65;
-      min-width: 84px;
-    }
-    .checkout-input {
-      width: 100%;
-      height: 38px;
-      border: 1px solid #d6e6dc;
-      border-radius: 10px;
-      padding: 0 10px;
-      font-size: 14px;
-      margin-top: 8px;
-    }
-    .pay-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-top: 1px solid var(--line);
-      padding-top: 12px;
-      margin-top: 8px;
-    }
-    .pay-btn {
-      border: 0;
-      border-radius: 999px;
-      padding: 12px 26px;
-      background: linear-gradient(135deg, #ff8f4f, #ff5f3a);
-      color: #fff;
-      font-weight: 700;
-      cursor: pointer;
-    }
+    .product { display: grid; grid-template-columns: 1.15fr 1fr; gap: 14px; }
+    .main-photo { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 14px; border: 1px solid #e7efe9; background: #f6f6f6; }
+    .thumbs { margin-top: 10px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+    .thumb { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 10px; border: 2px solid transparent; cursor: pointer; opacity: .9; }
+    .thumb.active { border-color: var(--brand); opacity: 1; }
+    .product-title { margin: 0; font-size: 24px; color: #2b3d35; }
+    .price { margin: 8px 0; font-size: 30px; font-weight: 800; color: #e3766d; }
+    .badge { display: inline-block; padding: 5px 10px; border-radius: 999px; background: #fff1f0; color: #c35f56; font-size: 13px; border: 1px solid #ffd8d4; }
+    .panel-title { margin: 0 0 8px; font-size: 18px; color: #31453b; }
+    .stepper { display: inline-flex; border: 1px solid #d8e8de; border-radius: 10px; overflow: hidden; }
+    .stepper button { width: 40px; height: 38px; border: 0; background: #f2faf5; color: #385a4a; cursor: pointer; font-size: 20px; line-height: 1; }
+    .stepper span { width: 46px; display: inline-flex; align-items: center; justify-content: center; background: #fff; font-weight: 700; }
+    .slot-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+    .slot { border: 1px solid #d8e8de; background: #fff; border-radius: 10px; padding: 10px 8px; cursor: pointer; text-align: center; color: #3a4c43; font-size: 14px; }
+    .slot small { display: block; color: #8b9f94; margin-top: 3px; }
+    .slot.active { border-color: var(--brand); background: #eff9f3; color: var(--brand-deep); font-weight: 700; }
+    .time-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+    .pill { border: 1px solid #d7e9de; border-radius: 999px; padding: 8px 12px; background: #fff; cursor: pointer; font-size: 14px; color: #3f5348; }
+    .pill.active { background: #ecf8f1; border-color: #a9d6bc; color: #2f6e4f; font-weight: 700; }
+    .pill.disabled { background: #f2f3f5; border-color: #e2e5e9; color: #9aa3ad; cursor: not-allowed; }
+    .price-tip { margin-top: 6px; color: #c35f56; font-size: 14px; font-weight: 600; }
+    .order-summary { margin-top: 12px; border-radius: 12px; background: #f7fcf9; border: 1px dashed #c9e2d4; padding: 12px; color: #41564b; font-size: 14px; line-height: 1.8; }
+    .checkout-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+    .checkout-title { margin: 0; font-size: 24px; font-weight: 700; color: #2a3f35; }
+    .checkout-block { border: 1px solid var(--line); border-radius: 12px; padding: 12px; margin-bottom: 10px; background: #fff; }
+    .checkout-row { display: flex; justify-content: space-between; gap: 10px; margin-top: 6px; color: #374a40; }
+    .checkout-label { color: #5c6e65; min-width: 84px; }
+    .checkout-input { width: 100%; height: 38px; border: 1px solid #d6e6dc; border-radius: 10px; padding: 0 10px; font-size: 14px; margin-top: 8px; }
+    .pay-bar { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--line); padding-top: 12px; margin-top: 8px; }
+    .pay-btn { border: 0; border-radius: 999px; padding: 12px 26px; background: linear-gradient(135deg, #ff8f4f, #ff5f3a); color: #fff; font-weight: 700; cursor: pointer; }
     .hidden { display: none !important; }
     .case-item { cursor: pointer; }
+    .case-img { width: 100%; height: 170px; object-fit: cover; border-radius: 12px; border: 1px solid #e7efe9; }
     .top-right { display: flex; justify-content: flex-end; margin-bottom: 8px; }
     @media (max-width: 640px) {
       .title { font-size: 24px; }
       .grid { grid-template-columns: 1fr; }
-      .product {
-        grid-template-columns: 1fr;
-      }
-      .slot-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
+      .product { grid-template-columns: 1fr; }
+      .slot-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
   </style>
 </head>
 <body>
   <div class="wrap">
+
+    <!-- 顶部介绍 -->
     <section class="card">
       <h1 class="title">邻家有花</h1>
       <p class="muted">把日常过成花一样的日子。清新自然、温柔明亮的花店页面模板，可直接替换你的门店介绍、作品、服务与价格。</p>
@@ -363,6 +101,7 @@
       </div>
     </section>
 
+    <!-- 花束点单（隐藏，按钮触发） -->
     <section class="card hidden" id="orderSection">
       <div class="top-right">
         <button class="btn secondary" type="button" id="backToCasesBtn">返回首页</button>
@@ -378,13 +117,11 @@
             <img class="thumb" data-src="./images/flower-4.png" src="./images/flower-4.png" alt="花束图4" />
           </div>
         </div>
-
         <div>
           <h3 class="product-title">邻家有花 · 奶油粉系花束</h3>
-          <div class="price">¥128</div>
-          <div class="price-tip">价格提示：时间紧急请直接联系我：19180930642</div>
-          <span class="badge">同款粉花 4 图展示 · 单款下单</span>
-
+          <div class="price">¥128 <span class="badge">热卖</span></div>
+          <div class="price-tip">时间紧急请直接联系我：19180930642</div>
+          <p class="muted" style="margin:8px 0;">同款粉花 4 图展示 · 单款下单</p>
           <div class="item">
             <p class="panel-title">数量</p>
             <div class="stepper">
@@ -393,65 +130,55 @@
               <button type="button" id="plusBtn">+</button>
             </div>
           </div>
-
           <div class="item">
             <p class="panel-title">自提日期</p>
             <div class="slot-grid" id="dateSlots"></div>
           </div>
-
           <div class="item">
             <p class="panel-title">配送时间段</p>
             <div class="time-pills" id="timeSlots">
-              <button class="pill active" type="button" data-time="10:00-12:00">10:00-12:00</button>
+              <button class="pill" type="button" data-time="10:00-12:00">10:00-12:00</button>
               <button class="pill" type="button" data-time="12:00-14:00">12:00-14:00</button>
               <button class="pill" type="button" data-time="14:00-16:00">14:00-16:00</button>
               <button class="pill" type="button" data-time="16:00-18:00">16:00-18:00</button>
               <button class="pill" type="button" data-time="18:00-20:00">18:00-20:00</button>
             </div>
           </div>
-
           <div class="order-summary" id="orderSummary"></div>
-          <div style="margin-top:12px;">
-            <button class="btn buy" type="button" id="buyBtn">立即购买</button>
-          </div>
+          <button class="btn buy" type="button" id="buyBtn" style="margin-top:14px;">立即购买</button>
         </div>
       </div>
     </section>
 
+    <!-- 提交订单（隐藏） -->
     <section class="card hidden" id="checkoutSection">
       <div class="checkout-head">
         <button class="btn secondary" type="button" id="backToOrderBtn">返回</button>
         <h2 class="checkout-title">提交订单</h2>
         <span></span>
       </div>
-
       <div class="checkout-block">
         <div class="checkout-row"><strong>收货地址</strong></div>
         <input id="addressInput" class="checkout-input" value="XX市XX区XX路XX号" placeholder="请输入收货地址" />
         <div class="checkout-row"><span class="checkout-label">配送时间</span><span id="checkoutTime">-</span></div>
       </div>
-
       <div class="checkout-block">
-        <div class="checkout-row">
-          <span class="checkout-label">订货人手机</span>
-          <span style="flex:1;">
-            <input id="phoneInput" class="checkout-input" value="13800000000" placeholder="请输入手机号" />
-          </span>
+        <div class="checkout-row"><span class="checkout-label">订货人手机</span>
+          <span style="flex:1;"><input id="phoneInput" class="checkout-input" value="13800000000" placeholder="请输入手机号" /></span>
         </div>
       </div>
-
       <div class="checkout-block">
         <div class="checkout-row"><strong id="checkoutName">邻家有花 · 奶油粉系花束</strong><span>x <span id="checkoutQty">1</span></span></div>
         <div class="checkout-row"><span>单价</span><span>¥<span id="checkoutUnitPrice">128</span></span></div>
         <div class="checkout-row"><span>小计</span><span>¥<span id="checkoutSubtotal">128</span></span></div>
       </div>
-
       <div class="pay-bar">
         <div>合计：<strong style="color:#e3766d;">¥<span id="checkoutTotal">128</span></strong></div>
         <button id="confirmPayBtn" class="pay-btn" type="button">立即购买</button>
       </div>
     </section>
 
+    <!-- 服务与价目 -->
     <section class="card">
       <h2 style="margin:0 0 8px;">服务与价目</h2>
       <div class="item">
@@ -468,17 +195,20 @@
       </div>
     </section>
 
+    <!-- 作品案例 -->
     <section class="card">
-      <h2 style="margin:0 0 12px;"> <section class="card">
- <h2>作品案例</h2>
- <div class="grid">
- <img class="case-img case-item" src="./images/flower-1.png" alt="花束案例1" style="width:100%;height:170px;object-fit:cover;border-radius:12px;border:1px solid #e7efe9;">
- <img class="case-img case-item" src="./images/flower-2.png" alt="花束案例2" style="width:100%;height:170px;object-fit:cover;border-radius:12px;border:1px solid #e7efe9;">
- <img class="case-img case-item" src="./images/flower-3.png" alt="花束案例3" style="width:100%;height:170px;object-fit:cover;border-radius:12px;border:1px solid #e7efe9;">
- <img class="case-img case-item" src="./images/flower-4.png" alt="花束案例4" style="width:100%;height:170px;object-fit:cover;border-radius:12px;border:1px solid #e7efe9;">
- </div>
- <p class="muted" style="margin-top:12px;font-size:13px">点击任一花案例进入下单详情。</p>
- </section><section class="card">
+      <h2 style="margin:0 0 12px;">作品案例</h2>
+      <div class="grid">
+        <img class="case-img" src="./images/flower-1.png" alt="花束案例1" />
+        <img class="case-img" src="./images/flower-2.png" alt="花束案例2" />
+        <img class="case-img" src="./images/flower-3.png" alt="花束案例3" />
+        <img class="case-img" src="./images/flower-4.png" alt="花束案例4" />
+      </div>
+      <p class="muted" style="margin-top:12px;font-size:13px;">点击任一花案例进入下单详情。</p>
+    </section>
+
+    <!-- 顾客反馈 -->
+    <section class="card">
       <h2 style="margin:0 0 8px;">顾客反馈（示例）</h2>
       <div class="review">
         <div class="nameprice"><span>顾客A</span><span>2026-03-01</span></div>
@@ -492,119 +222,102 @@
       </div>
     </section>
 
+    <!-- 联系与到店 -->
     <section class="card">
       <h2 style="margin:0 0 8px;">联系与到店</h2>
       <p class="muted">营业时间：10:00 - 20:00</p>
       <p class="muted">电话：19180930642</p>
       <p class="muted">地址：XX市XX区XX路XX号</p>
     </section>
+
   </div>
+
   <script>
     (function () {
-      const unitPrice = 128;
-      const SHOP_PHONE = "19180930642";
-      const WECHAT_ID = "lyy666_WR";
-      let qty = 1;
-      let selectedDate = "";
-      let selectedDateKey = "";
-      let selectedTime = "";
-      const API_BASE = "http://localhost:3000";
-      const OPEN_API_TOKEN = "dev_open_token_2026";
+      var unitPrice = 128;
+      var SHOP_PHONE = "19180930642";
+      var WECHAT_ID = "lyy666_WR";
+      var qty = 1;
+      var selectedDate = "";
+      var selectedDateKey = "";
+      var selectedTime = "";
+      var API_BASE = "http://localhost:3000";
+      var OPEN_API_TOKEN = "dev_open_token_2026";
 
       function copyToClipboard(text) {
         if (navigator.clipboard && navigator.clipboard.writeText) {
           return navigator.clipboard.writeText(text);
         }
         return new Promise(function (resolve, reject) {
-          const ta = document.createElement("textarea");
+          var ta = document.createElement("textarea");
           ta.value = text;
           ta.style.position = "fixed";
           ta.style.left = "-9999px";
           document.body.appendChild(ta);
           ta.select();
-          try {
-            document.execCommand("copy");
-            resolve();
-          } catch (e) {
-            reject(e);
-          } finally {
-            document.body.removeChild(ta);
-          }
+          try { document.execCommand("copy"); resolve(); } catch (e) { reject(e); }
+          document.body.removeChild(ta);
         });
       }
 
-      const qtyEl = document.getElementById("qty");
-      const summaryEl = document.getElementById("orderSummary");
-      const dateSlotsEl = document.getElementById("dateSlots");
-      const orderSection = document.getElementById("orderSection");
-      const checkoutSection = document.getElementById("checkoutSection");
-      const backToCasesBtn = document.getElementById("backToCasesBtn");
-      const backToOrderBtn = document.getElementById("backToOrderBtn");
-      const caseItems = document.querySelectorAll(".case-item");
-      const homeSections = document.querySelectorAll(".wrap > section.card:not(#orderSection):not(#checkoutSection)");
+      var qtyEl = document.getElementById("qty");
+      var summaryEl = document.getElementById("orderSummary");
+      var dateSlotsEl = document.getElementById("dateSlots");
+      var orderSection = document.getElementById("orderSection");
+      var checkoutSection = document.getElementById("checkoutSection");
+      var caseItems = document.querySelectorAll(".case-img");
+      var homeSections = document.querySelectorAll(".wrap > section.card");
 
-      const formatDate = (d) => {
-        const m = d.getMonth() + 1;
-        const day = d.getDate();
-        const week = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"][d.getDay()];
+      var formatDate = function (d) {
+        var m = d.getMonth() + 1;
+        var day = d.getDate();
+        var week = ["周日","周一","周二","周三","周四","周五","周六"][d.getDay()];
         return { key: d.toISOString().slice(0, 10), label: week + " " + m + "." + day };
       };
 
-      const buildDateSlots = () => {
-        const now = new Date();
-        const dates = [];
-        for (let i = 0; i < 6; i++) {
-          const d = new Date(now);
+      var buildDateSlots = function () {
+        var now = new Date();
+        var dates = [];
+        for (var i = 0; i < 6; i++) {
+          var d = new Date(now);
           d.setDate(now.getDate() + i);
           dates.push(formatDate(d));
         }
         selectedDate = dates[0].label;
         selectedDateKey = dates[0].key;
-        dateSlotsEl.innerHTML = dates
-          .map((d, i) => {
-            const active = i === 0 ? "active" : "";
-            return '<button class="slot ' + active + '" data-key="' + d.key + '" data-date="' + d.label + '" type="button">' + d.label + '<small>¥' + unitPrice + '</small></button>';
-          })
-          .join("");
+        dateSlotsEl.innerHTML = dates.map(function (d, i) {
+          return '<button class="slot' + (i === 0 ? ' active' : '') + '" data-key="' + d.key + '" data-date="' + d.label + '" type="button">' + d.label + '<small>¥' + unitPrice + '</small></button>';
+        }).join("");
       };
 
-      const isSlotAvailable = (dateKey, timeRange) => {
-        const start = (timeRange || "").split("-")[0];
+      var isSlotAvailable = function (dateKey, timeRange) {
+        var start = (timeRange || "").split("-")[0];
         if (!dateKey || !start) return false;
-        const now = new Date();
-        const minTime = now.getTime() + 3 * 60 * 60 * 1000;
-        const target = new Date(dateKey + "T" + start + ":00");
+        var now = new Date();
+        var minTime = now.getTime() + 3 * 60 * 60 * 1000;
+        var target = new Date(dateKey + "T" + start + ":00");
         return target.getTime() >= minTime;
       };
 
-      const refreshTimeSlotsByRule = () => {
-        const timeWrap = document.getElementById("timeSlots");
-        const pills = Array.from(timeWrap.querySelectorAll(".pill"));
-        let firstAvailable = "";
-
-        pills.forEach((pill) => {
-          const time = pill.getAttribute("data-time") || "";
-          const ok = isSlotAvailable(selectedDateKey, time);
+      var refreshTimeSlots = function () {
+        var pills = Array.from(document.getElementById("timeSlots").querySelectorAll(".pill"));
+        var firstAvailable = "";
+        pills.forEach(function (pill) {
+          var time = pill.getAttribute("data-time") || "";
+          var ok = isSlotAvailable(selectedDateKey, time);
           pill.disabled = !ok;
           pill.classList.toggle("disabled", !ok);
           if (ok && !firstAvailable) firstAvailable = time;
-          if (!ok && selectedTime === time) {
-            selectedTime = "";
-          }
+          if (!ok && selectedTime === time) selectedTime = "";
         });
-
-        if (!selectedTime && firstAvailable) {
-          selectedTime = firstAvailable;
-        }
-
-        pills.forEach((pill) => {
-          const time = pill.getAttribute("data-time") || "";
-          pill.classList.toggle("active", time === selectedTime);
+        if (!selectedTime && firstAvailable) selectedTime = firstAvailable;
+        pills.forEach(function (pill) {
+          pill.classList.toggle("active", pill.getAttribute("data-time") === selectedTime);
         });
       };
 
-      const renderSummary = () => {
-        const total = unitPrice * qty;
+      var renderSummary = function () {
+        var total = unitPrice * qty;
         summaryEl.innerHTML =
           "已选：<b>邻家有花 · 奶油粉系花束</b><br>" +
           "数量：<b>" + qty + "</b> 束<br>" +
@@ -625,173 +338,137 @@
       });
 
       dateSlotsEl.addEventListener("click", function (e) {
-        const btn = e.target.closest(".slot");
+        var btn = e.target.closest(".slot");
         if (!btn) return;
-        dateSlotsEl.querySelectorAll(".slot").forEach((el) => el.classList.remove("active"));
+        dateSlotsEl.querySelectorAll(".slot").forEach(function (el) { el.classList.remove("active"); });
         btn.classList.add("active");
         selectedDate = btn.getAttribute("data-date") || "";
         selectedDateKey = btn.getAttribute("data-key") || "";
-        refreshTimeSlotsByRule();
+        refreshTimeSlots();
         renderSummary();
       });
 
-      const timeWrap = document.getElementById("timeSlots");
-      timeWrap.addEventListener("click", function (e) {
-        const btn = e.target.closest(".pill");
-        if (!btn) return;
-        if (btn.disabled || btn.classList.contains("disabled")) return;
-        timeWrap.querySelectorAll(".pill").forEach((el) => el.classList.remove("active"));
-        btn.classList.add("active");
-        selectedTime = btn.getAttribute("data-time") || "";
+      document.getElementById("timeSlots").addEventListener("click", function (e) {
+        var pill = e.target.closest(".pill");
+        if (!pill || pill.disabled || pill.classList.contains("disabled")) return;
+        document.getElementById("timeSlots").querySelectorAll(".pill").forEach(function (el) { el.classList.remove("active"); });
+        pill.classList.add("active");
+        selectedTime = pill.getAttribute("data-time") || "";
         renderSummary();
       });
 
-      async function submitOrder() {
-        const total = unitPrice * qty;
-        const orderNo = "NJYH" + Date.now();
-        const orderTime = new Date().toLocaleString("zh-CN", { hour12: false });
-        const idempotencyKey = orderNo;
-        const phone = (document.getElementById("phoneInput").value || "").trim();
-        const address = (document.getElementById("addressInput").value || "").trim();
+      // 缩略图切换
+      document.getElementById("thumbs").addEventListener("click", function (e) {
+        var img = e.target.closest(".thumb");
+        if (!img) return;
+        document.getElementById("thumbs").querySelectorAll(".thumb").forEach(function (el) { el.classList.remove("active"); });
+        img.classList.add("active");
+        document.getElementById("mainImage").src = img.getAttribute("data-src");
+      });
 
-        const payload = {
-          orderNo,
-          customerName: "网页顾客",
-          customerPhone: phone || "13800000000",
-          deliveryAddress: address || "未填写地址",
-          serviceType: "奶油粉系花束",
-          items: [{ name: "邻家有花 · 奶油粉系花束", qty, price: unitPrice }],
-          totalAmount: total,
-          remark: "配送日期 " + selectedDate + "，配送时段 " + selectedTime,
-          orderTime
-        };
-
-        const res = await fetch(API_BASE + "/api/open/orders", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "x-api-token": OPEN_API_TOKEN,
-            "idempotency-key": idempotencyKey
-          },
-          body: JSON.stringify(payload)
+      // 作品案例点击
+      caseItems.forEach(function (img) {
+        img.addEventListener("click", function () {
+          document.getElementById("mainImage").src = img.src;
+          showOrderSection();
         });
+      });
 
-        const data = await res.json().catch(function () { return null; });
-        if (!res.ok || !data || data.code !== 0) {
-          const msg = data && data.message ? data.message : "请求失败";
-          throw new Error(msg);
-        }
-        return { orderNo, total, notifyStatus: data.data.notifyStatus };
+      function showOrderSection() {
+        homeSections.forEach(function (el) { el.classList.add("hidden"); });
+        orderSection.classList.remove("hidden");
+        checkoutSection.classList.add("hidden");
+        window.scrollTo({ top: 0, behavior: "smooth" });
       }
 
-      function openCheckoutPage() {
+      document.getElementById("buyBtn").addEventListener("click", function () {
         if (!selectedTime) {
           alert("当前可配送时段小于3小时，请直接联系：" + SHOP_PHONE);
           return;
         }
-        const total = unitPrice * qty;
+        var total = unitPrice * qty;
         document.getElementById("checkoutTime").textContent = selectedDate + " " + selectedTime;
         document.getElementById("checkoutQty").textContent = String(qty);
         document.getElementById("checkoutUnitPrice").textContent = String(unitPrice);
         document.getElementById("checkoutSubtotal").textContent = String(total);
         document.getElementById("checkoutTotal").textContent = String(total);
-
         orderSection.classList.add("hidden");
         checkoutSection.classList.remove("hidden");
         window.scrollTo({ top: 0, behavior: "smooth" });
-      }
-
-      document.getElementById("buyBtn").addEventListener("click", function () {
-        openCheckoutPage();
       });
 
-      document.getElementById("confirmPayBtn").addEventListener("click", async function () {
-        const btn = this;
-        btn.disabled = true;
-        btn.textContent = "提交中...";
-        try {
-          const result = await submitOrder();
-          alert(
-            "下单成功\n" +
-            "订单号：" + result.orderNo + "\n" +
-            "总价：¥" + result.total + "\n" +
-            "通知状态：" + result.notifyStatus + "\n\n" +
-            "后台管理系统已收到订单。"
-          );
-        } catch (err) {
-          alert("下单失败：" + err.message + "\n请确认后台服务已启动。");
-        } finally {
-          btn.disabled = false;
-          btn.textContent = "立即购买";
-        }
-      });
-
-      const mainImage = document.getElementById("mainImage");
-      const thumbs = document.getElementById("thumbs");
-      thumbs.addEventListener("click", function (e) {
-        const img = e.target.closest(".thumb");
-        if (!img) return;
-        thumbs.querySelectorAll(".thumb").forEach((el) => el.classList.remove("active"));
-        img.classList.add("active");
-        mainImage.src = img.getAttribute("data-src");
-      });
-
-      const openDetailPage = function () {
-        homeSections.forEach(function (el) {
-          el.classList.add("hidden");
-        });
-        checkoutSection.classList.add("hidden");
-        orderSection.classList.remove("hidden");
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      };
-
-      const backToHomePage = function () {
+      document.getElementById("backToCasesBtn").addEventListener("click", function () {
         orderSection.classList.add("hidden");
         checkoutSection.classList.add("hidden");
-        homeSections.forEach(function (el) {
-          el.classList.remove("hidden");
-        });
+        homeSections.forEach(function (el) { el.classList.remove("hidden"); });
         window.scrollTo({ top: 0, behavior: "smooth" });
-      };
+      });
 
-      const backToOrderPage = function () {
+      document.getElementById("backToOrderBtn").addEventListener("click", function () {
         checkoutSection.classList.add("hidden");
         orderSection.classList.remove("hidden");
         window.scrollTo({ top: 0, behavior: "smooth" });
-      };
+      });
 
-      caseItems.forEach(function (img) {
-        img.addEventListener("click", function () {
-          const src = img.getAttribute("src");
-          if (src) {
-            mainImage.src = src;
+      document.getElementById("confirmPayBtn").addEventListener("click", function () {
+        var btn = this;
+        btn.disabled = true;
+        btn.textContent = "提交中...";
+        var total = unitPrice * qty;
+        var orderNo = "NJYH" + Date.now();
+        var orderTime = new Date().toLocaleString("zh-CN", { hour12: false });
+        var phone = (document.getElementById("phoneInput").value || "").trim();
+        var address = (document.getElementById("addressInput").value || "").trim();
+        fetch(API_BASE + "/api/open/orders", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "x-api-token": OPEN_API_TOKEN,
+            "idempotency-key": orderNo
+          },
+          body: JSON.stringify({
+            orderNo: orderNo,
+            customerName: "网页顾客",
+            customerPhone: phone || "13800000000",
+            deliveryAddress: address || "未填写地址",
+            serviceType: "奶油粉系花束",
+            items: [{ name: "邻家有花 · 奶油粉系花束", qty: qty, price: unitPrice }],
+            totalAmount: total,
+            remark: "配送日期 " + selectedDate + "，配送时段 " + selectedTime,
+            orderTime: orderTime
+          })
+        }).then(function (res) { return res.json(); }).then(function (data) {
+          if (data && data.code === 0) {
+            alert("下单成功
+订单号：" + orderNo + "
+总价：¥" + total + "
+
+后台管理系统已收到订单。");
+          } else {
+            alert("下单失败：" + (data && data.message ? data.message : "请确认后台服务已启动"));
           }
-          openDetailPage();
+        }).catch(function () {
+          alert("下单失败：网络错误，请确认后台服务已启动。");
+        }).finally(function () {
+          btn.disabled = false;
+          btn.textContent = "立即购买";
         });
-      });
-
-      backToCasesBtn.addEventListener("click", function () {
-        backToHomePage();
-      });
-      backToOrderBtn.addEventListener("click", function () {
-        backToOrderPage();
       });
 
       document.getElementById("copyWechatBtn").addEventListener("click", function () {
-        copyToClipboard(WECHAT_ID)
-          .then(function () {
-            alert("已复制微信号：" + WECHAT_ID);
-          })
-          .catch(function () {
-            alert("复制失败，请手动复制：" + WECHAT_ID);
-          });
+        copyToClipboard(WECHAT_ID).then(function () {
+          alert("已复制微信号：" + WECHAT_ID);
+        }).catch(function () {
+          alert("复制失败，请手动复制：" + WECHAT_ID);
+        });
       });
+
       document.getElementById("callPhoneBtn").addEventListener("click", function () {
         window.location.href = "tel:" + SHOP_PHONE;
       });
 
       buildDateSlots();
-      refreshTimeSlotsByRule();
+      refreshTimeSlots();
       renderSummary();
     })();
   </script>
