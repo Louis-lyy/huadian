@@ -71,8 +71,8 @@
     .pay-bar { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--line); padding-top: 12px; margin-top: 8px; }
     .pay-btn { border: 0; border-radius: 999px; padding: 12px 26px; background: linear-gradient(135deg, #ff8f4f, #ff5f3a); color: #fff; font-weight: 700; cursor: pointer; }
     .hidden { display: none !important; }
-    .case-item { cursor: pointer; }
-    .case-img { width: 100%; height: 170px; object-fit: cover; border-radius: 12px; border: 1px solid #e7efe9; }
+    .case-img { width: 100%; height: 170px; object-fit: cover; border-radius: 12px; border: 1px solid #e7efe9; cursor: pointer; }
+    .case-img:hover { opacity: .85; }
     .top-right { display: flex; justify-content: flex-end; margin-bottom: 8px; }
     @media (max-width: 640px) {
       .title { font-size: 24px; }
@@ -85,23 +85,73 @@
 <body>
   <div class="wrap">
 
-    <!-- 顶部介绍 -->
-    <section class="card">
-      <h1 class="title">邻家有花</h1>
-      <p class="muted">把日常过成花一样的日子。清新自然、温柔明亮的花店页面模板，可直接替换你的门店介绍、作品、服务与价格。</p>
-      <div class="hero">
-        <div style="position:relative;z-index:1;">
-          <div style="font-size:24px;font-weight:800;">邻家有花 · 当季花束上新</div>
-          <div style="margin-top:6px;opacity:.95;">生日 / 纪念日 / 求婚 / 节日</div>
+    <!-- 首页所有区块（JS 会统一控制显示/隐藏） -->
+    <div id="homeSections">
+      <section class="card">
+        <h1 class="title">邻家有花</h1>
+        <p class="muted">把日常过成花一样的日子。清新自然、温柔明亮的花店页面模板，可直接替换你的门店介绍、作品、服务与价格。</p>
+        <div class="hero">
+          <div style="position:relative;z-index:1;">
+            <div style="font-size:24px;font-weight:800;">邻家有花 · 当季花束上新</div>
+            <div style="margin-top:6px;opacity:.95;">生日 / 纪念日 / 求婚 / 节日</div>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <button type="button" class="btn secondary" id="copyWechatBtn">复制微信</button>
-        <button type="button" class="btn" id="callPhoneBtn">拨打电话</button>
-      </div>
-    </section>
+        <div class="row">
+          <button type="button" class="btn secondary" id="copyWechatBtn">复制微信</button>
+          <button type="button" class="btn" id="callPhoneBtn">拨打电话</button>
+        </div>
+      </section>
 
-    <!-- 花束点单（隐藏，按钮触发） -->
+      <section class="card">
+        <h2 style="margin:0 0 8px;">服务与价目</h2>
+        <div class="item">
+          <div class="nameprice"><span>花束定制</span><span>¥199 起</span></div>
+          <div class="muted">按预算与场景搭配：生日、探望、节日、求婚。</div>
+        </div>
+        <div class="item">
+          <div class="nameprice"><span>开业/乔迁花篮</span><span>¥399 起</span></div>
+          <div class="muted">支持同城配送与贺卡落款。</div>
+        </div>
+        <div class="item">
+          <div class="nameprice"><span>婚礼/活动花艺</span><span>按方案报价</span></div>
+          <div class="muted">手捧、胸花、迎宾、桌花、拱门。</div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2 style="margin:0 0 12px;">作品案例</h2>
+        <div class="grid">
+          <img class="case-img" src="./images/flower-1.png" alt="花束案例1" />
+          <img class="case-img" src="./images/flower-2.png" alt="花束案例2" />
+          <img class="case-img" src="./images/flower-3.png" alt="花束案例3" />
+          <img class="case-img" src="./images/flower-4.png" alt="花束案例4" />
+        </div>
+        <p class="muted" style="margin-top:12px;font-size:13px;">点击任一花案例进入下单详情。</p>
+      </section>
+
+      <section class="card">
+        <h2 style="margin:0 0 8px;">顾客反馈（示例）</h2>
+        <div class="review">
+          <div class="nameprice"><span>顾客A</span><span>2026-03-01</span></div>
+          <div class="stars">★★★★★</div>
+          <div class="muted">花束配色很高级，送达也很准时。</div>
+        </div>
+        <div class="review">
+          <div class="nameprice"><span>顾客B</span><span>2026-02-18</span></div>
+          <div class="stars">★★★★★</div>
+          <div class="muted">老板沟通细致，按预算做得很好看。</div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2 style="margin:0 0 8px;">联系与到店</h2>
+        <p class="muted">营业时间：10:00 - 20:00</p>
+        <p class="muted">电话：19180930642</p>
+        <p class="muted">地址：XX市XX区XX路XX号</p>
+      </section>
+    </div><!-- /homeSections -->
+
+    <!-- 花束点单（隐藏区块） -->
     <section class="card hidden" id="orderSection">
       <div class="top-right">
         <button class="btn secondary" type="button" id="backToCasesBtn">返回首页</button>
@@ -150,7 +200,7 @@
       </div>
     </section>
 
-    <!-- 提交订单（隐藏） -->
+    <!-- 提交订单（隐藏区块） -->
     <section class="card hidden" id="checkoutSection">
       <div class="checkout-head">
         <button class="btn secondary" type="button" id="backToOrderBtn">返回</button>
@@ -178,61 +228,10 @@
       </div>
     </section>
 
-    <!-- 服务与价目 -->
-    <section class="card">
-      <h2 style="margin:0 0 8px;">服务与价目</h2>
-      <div class="item">
-        <div class="nameprice"><span>花束定制</span><span>¥199 起</span></div>
-        <div class="muted">按预算与场景搭配：生日、探望、节日、求婚。</div>
-      </div>
-      <div class="item">
-        <div class="nameprice"><span>开业/乔迁花篮</span><span>¥399 起</span></div>
-        <div class="muted">支持同城配送与贺卡落款。</div>
-      </div>
-      <div class="item">
-        <div class="nameprice"><span>婚礼/活动花艺</span><span>按方案报价</span></div>
-        <div class="muted">手捧、胸花、迎宾、桌花、拱门。</div>
-      </div>
-    </section>
-
-    <!-- 作品案例 -->
-    <section class="card">
-      <h2 style="margin:0 0 12px;">作品案例</h2>
-      <div class="grid">
-        <img class="case-img" src="./images/flower-1.png" alt="花束案例1" />
-        <img class="case-img" src="./images/flower-2.png" alt="花束案例2" />
-        <img class="case-img" src="./images/flower-3.png" alt="花束案例3" />
-        <img class="case-img" src="./images/flower-4.png" alt="花束案例4" />
-      </div>
-      <p class="muted" style="margin-top:12px;font-size:13px;">点击任一花案例进入下单详情。</p>
-    </section>
-
-    <!-- 顾客反馈 -->
-    <section class="card">
-      <h2 style="margin:0 0 8px;">顾客反馈（示例）</h2>
-      <div class="review">
-        <div class="nameprice"><span>顾客A</span><span>2026-03-01</span></div>
-        <div class="stars">★★★★★</div>
-        <div class="muted">花束配色很高级，送达也很准时。</div>
-      </div>
-      <div class="review">
-        <div class="nameprice"><span>顾客B</span><span>2026-02-18</span></div>
-        <div class="stars">★★★★★</div>
-        <div class="muted">老板沟通细致，按预算做得很好看。</div>
-      </div>
-    </section>
-
-    <!-- 联系与到店 -->
-    <section class="card">
-      <h2 style="margin:0 0 8px;">联系与到店</h2>
-      <p class="muted">营业时间：10:00 - 20:00</p>
-      <p class="muted">电话：19180930642</p>
-      <p class="muted">地址：XX市XX区XX路XX号</p>
-    </section>
-
   </div>
 
   <script>
+
     (function () {
       var unitPrice = 128;
       var SHOP_PHONE = "19180930642";
@@ -260,13 +259,38 @@
         });
       }
 
-      var qtyEl = document.getElementById("qty");
-      var summaryEl = document.getElementById("orderSummary");
-      var dateSlotsEl = document.getElementById("dateSlots");
-      var orderSection = document.getElementById("orderSection");
-      var checkoutSection = document.getElementById("checkoutSection");
-      var caseItems = document.querySelectorAll(".case-img");
-      var homeSections = document.querySelectorAll(".wrap > section.card");
+      // 工具函数：隐藏/显示首页各区块
+      function showHomePage() {
+        document.getElementById("orderSection").classList.add("hidden");
+        document.getElementById("checkoutSection").classList.add("hidden");
+        document.querySelectorAll("#homeSections .card").forEach(function (el) {
+          el.classList.remove("hidden");
+        });
+      }
+
+      function showOrderSection(imgSrc) {
+        document.querySelectorAll("#homeSections .card").forEach(function (el) {
+          el.classList.add("hidden");
+        });
+        document.getElementById("checkoutSection").classList.add("hidden");
+        if (imgSrc) {
+          document.getElementById("mainImage").src = imgSrc;
+        }
+        document.getElementById("orderSection").classList.remove("hidden");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      function showCheckoutPage() {
+        var total = unitPrice * qty;
+        document.getElementById("checkoutTime").textContent = selectedDate + " " + selectedTime;
+        document.getElementById("checkoutQty").textContent = String(qty);
+        document.getElementById("checkoutUnitPrice").textContent = String(unitPrice);
+        document.getElementById("checkoutSubtotal").textContent = String(total);
+        document.getElementById("checkoutTotal").textContent = String(total);
+        document.getElementById("orderSection").classList.add("hidden");
+        document.getElementById("checkoutSection").classList.remove("hidden");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
 
       var formatDate = function (d) {
         var m = d.getMonth() + 1;
@@ -285,7 +309,7 @@
         }
         selectedDate = dates[0].label;
         selectedDateKey = dates[0].key;
-        dateSlotsEl.innerHTML = dates.map(function (d, i) {
+        document.getElementById("dateSlots").innerHTML = dates.map(function (d, i) {
           return '<button class="slot' + (i === 0 ? ' active' : '') + '" data-key="' + d.key + '" data-date="' + d.label + '" type="button">' + d.label + '<small>¥' + unitPrice + '</small></button>';
         }).join("");
       };
@@ -318,7 +342,7 @@
 
       var renderSummary = function () {
         var total = unitPrice * qty;
-        summaryEl.innerHTML =
+        document.getElementById("orderSummary").innerHTML =
           "已选：<b>邻家有花 · 奶油粉系花束</b><br>" +
           "数量：<b>" + qty + "</b> 束<br>" +
           "日期：<b>" + selectedDate + "</b><br>" +
@@ -326,21 +350,23 @@
           "合计：<b>¥" + total + "</b>";
       };
 
+      // 数量增减
       document.getElementById("plusBtn").addEventListener("click", function () {
         qty++;
-        qtyEl.textContent = String(qty);
+        document.getElementById("qty").textContent = String(qty);
         renderSummary();
       });
       document.getElementById("minusBtn").addEventListener("click", function () {
         qty = Math.max(1, qty - 1);
-        qtyEl.textContent = String(qty);
+        document.getElementById("qty").textContent = String(qty);
         renderSummary();
       });
 
-      dateSlotsEl.addEventListener("click", function (e) {
+      // 日期选择
+      document.getElementById("dateSlots").addEventListener("click", function (e) {
         var btn = e.target.closest(".slot");
         if (!btn) return;
-        dateSlotsEl.querySelectorAll(".slot").forEach(function (el) { el.classList.remove("active"); });
+        document.getElementById("dateSlots").querySelectorAll(".slot").forEach(function (el) { el.classList.remove("active"); });
         btn.classList.add("active");
         selectedDate = btn.getAttribute("data-date") || "";
         selectedDateKey = btn.getAttribute("data-key") || "";
@@ -348,6 +374,7 @@
         renderSummary();
       });
 
+      // 时段选择
       document.getElementById("timeSlots").addEventListener("click", function (e) {
         var pill = e.target.closest(".pill");
         if (!pill || pill.disabled || pill.classList.contains("disabled")) return;
@@ -366,50 +393,36 @@
         document.getElementById("mainImage").src = img.getAttribute("data-src");
       });
 
-      // 作品案例点击
-      caseItems.forEach(function (img) {
+      // 作品案例点击 → 进入点单页
+      document.querySelectorAll(".case-img").forEach(function (img) {
+        img.style.cursor = "pointer";
         img.addEventListener("click", function () {
-          document.getElementById("mainImage").src = img.src;
-          showOrderSection();
+          showOrderSection(img.src);
         });
       });
 
-      function showOrderSection() {
-        homeSections.forEach(function (el) { el.classList.add("hidden"); });
-        orderSection.classList.remove("hidden");
-        checkoutSection.classList.add("hidden");
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }
-
+      // 立即购买
       document.getElementById("buyBtn").addEventListener("click", function () {
         if (!selectedTime) {
           alert("当前可配送时段小于3小时，请直接联系：" + SHOP_PHONE);
           return;
         }
-        var total = unitPrice * qty;
-        document.getElementById("checkoutTime").textContent = selectedDate + " " + selectedTime;
-        document.getElementById("checkoutQty").textContent = String(qty);
-        document.getElementById("checkoutUnitPrice").textContent = String(unitPrice);
-        document.getElementById("checkoutSubtotal").textContent = String(total);
-        document.getElementById("checkoutTotal").textContent = String(total);
-        orderSection.classList.add("hidden");
-        checkoutSection.classList.remove("hidden");
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        showCheckoutPage();
       });
 
+      // 返回首页
       document.getElementById("backToCasesBtn").addEventListener("click", function () {
-        orderSection.classList.add("hidden");
-        checkoutSection.classList.add("hidden");
-        homeSections.forEach(function (el) { el.classList.remove("hidden"); });
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        showHomePage();
       });
 
+      // 返回点单页
       document.getElementById("backToOrderBtn").addEventListener("click", function () {
-        checkoutSection.classList.add("hidden");
-        orderSection.classList.remove("hidden");
+        document.getElementById("checkoutSection").classList.add("hidden");
+        document.getElementById("orderSection").classList.remove("hidden");
         window.scrollTo({ top: 0, behavior: "smooth" });
       });
 
+      // 提交订单
       document.getElementById("confirmPayBtn").addEventListener("click", function () {
         var btn = this;
         btn.disabled = true;
@@ -439,11 +452,7 @@
           })
         }).then(function (res) { return res.json(); }).then(function (data) {
           if (data && data.code === 0) {
-            alert("下单成功
-订单号：" + orderNo + "
-总价：¥" + total + "
-
-后台管理系统已收到订单。");
+            alert("下单成功\n订单号：" + orderNo + "\n总价：¥" + total + "\n\n后台管理系统已收到订单。");
           } else {
             alert("下单失败：" + (data && data.message ? data.message : "请确认后台服务已启动"));
           }
@@ -455,6 +464,7 @@
         });
       });
 
+      // 复制微信
       document.getElementById("copyWechatBtn").addEventListener("click", function () {
         copyToClipboard(WECHAT_ID).then(function () {
           alert("已复制微信号：" + WECHAT_ID);
@@ -463,6 +473,7 @@
         });
       });
 
+      // 拨打电话
       document.getElementById("callPhoneBtn").addEventListener("click", function () {
         window.location.href = "tel:" + SHOP_PHONE;
       });
@@ -471,6 +482,7 @@
       refreshTimeSlots();
       renderSummary();
     })();
+    
   </script>
 </body>
 </html>
